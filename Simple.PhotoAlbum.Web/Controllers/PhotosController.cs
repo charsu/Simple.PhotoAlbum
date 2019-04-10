@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Simple.PhotoAlbum.Web.Controllers {
    [Route("api/[controller]")]
    [ApiController]
-   public class ValuesController : ControllerBase {
+   public class PhotosController : ControllerBase {
       // GET api/values
       [HttpGet]
       public ActionResult<IEnumerable<string>> Get() {

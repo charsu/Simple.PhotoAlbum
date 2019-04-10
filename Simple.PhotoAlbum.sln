@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.PhotoAlbum.Web", "Simple.PhotoAlbum.Web\Simple.PhotoAlbum.Web.csproj", "{4B18AA5C-2DA7-43DB-8260-ECE5036ED56B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.PhotoAlbum.Core", "Simple.PhotoAlbum.Core\Simple.PhotoAlbum.Core.csproj", "{7E39D91E-4FEF-476C-96E2-C407D346C029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.PhotoAlbum.Tests", "Simple.PhotoAlbum.Tests\Simple.PhotoAlbum.Tests.csproj", "{6214E470-DE8A-4918-8BF5-EA4BC9665B58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B5AE5617-A962-4D5A-A45A-14651B8AF285}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B18AA5C-2DA7-43DB-8260-ECE5036ED56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B18AA5C-2DA7-43DB-8260-ECE5036ED56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B18AA5C-2DA7-43DB-8260-ECE5036ED56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B18AA5C-2DA7-43DB-8260-ECE5036ED56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E39D91E-4FEF-476C-96E2-C407D346C029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E39D91E-4FEF-476C-96E2-C407D346C029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E39D91E-4FEF-476C-96E2-C407D346C029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E39D91E-4FEF-476C-96E2-C407D346C029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6214E470-DE8A-4918-8BF5-EA4BC9665B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6214E470-DE8A-4918-8BF5-EA4BC9665B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6214E470-DE8A-4918-8BF5-EA4BC9665B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6214E470-DE8A-4918-8BF5-EA4BC9665B58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6214E470-DE8A-4918-8BF5-EA4BC9665B58} = {B5AE5617-A962-4D5A-A45A-14651B8AF285}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C456CC7B-0E04-479B-B582-C3389563D458}
+	EndGlobalSection
+EndGlobal
