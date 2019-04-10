@@ -1,7 +1,7 @@
 ﻿# Simple.PhotoAlbum
 web api proof of concept for fetching data (static) for albums and photos
 
-# endpoints 
+### endpoints 
 
 [GET]api/photos - get all photos 
 [GET]api/photos/[id] - get photo with id 
