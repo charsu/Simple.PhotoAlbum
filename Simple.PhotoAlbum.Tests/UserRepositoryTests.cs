@@ -32,7 +32,7 @@ namespace Simple.PhotoAlbum.Tests {
          var service = GetMock().Create<UserRepository>();
          var output = service.GetAlbumsForUser(userid)?.ToList();
 
-         Assert.AreEqual(4, output.Count);
+         Assert.AreEqual(5, output.Count);
       }
 
       [Test]
@@ -42,7 +42,7 @@ namespace Simple.PhotoAlbum.Tests {
          var service = GetMock().Create<UserRepository>();
          var output = service.GetPhotosForUser(userid)?.ToList();
 
-         Assert.AreEqual(4, output.Count);
+         Assert.AreEqual(10, output.Count);
       }
    }
 

@@ -10,6 +10,11 @@ namespace Tests {
       private AutoMock GetMock()
          => AutoMock.GetLoose();
 
+      [SetUp]
+      public void OnStart() {
+         Simple.PhotoAlbum.Tests.Setup.OnStart();
+      }
+
       [Test]
       public void DataRespository_Query_Photos() {
          var service = GetMock().Create<DataRepositoryInMemory>();

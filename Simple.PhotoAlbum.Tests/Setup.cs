@@ -9,12 +9,9 @@ namespace Simple.PhotoAlbum.Tests {
    public class Setup {
       public const string Integration = "Integration";
 
-      // will be run once 
-      [OneTimeSetUp]
-      public void OnStart() {
+      public static void OnStart() {
          var dir = TestContext.CurrentContext.TestDirectory;
-         
-         
+
          // setup the data repository by loading the static data from json
          // we dont plan to alter the data so it is safe to only do it once
          Simple.PhotoAlbum.Core.Setup.LoadStaticData(new AppConfig() {
