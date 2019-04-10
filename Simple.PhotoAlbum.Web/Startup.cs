@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Simple.PhotoAlbum.Core;
+using Simple.PhotoAlbum.Core.Repositories;
 
 namespace Simple.PhotoAlbum.Web {
    public class Startup {
@@ -22,6 +25,9 @@ namespace Simple.PhotoAlbum.Web {
       // This method gets called by the runtime. Use this method to add services to the container.
       public void ConfigureServices(IServiceCollection services) {
          services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+         services.AddTransient<IDataRepository, DataRepositoryInMemory>();
+         services.AddTransient<IUserRepository, UserRepository>();
       }
 
       // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +42,12 @@ namespace Simple.PhotoAlbum.Web {
 
          app.UseHttpsRedirection();
          app.UseMvc();
+
+         // load the static data 
+         Setup.LoadStaticData(new AppConfig() {
+            DataAlbumsFullPath = Path.Combine(env.ContentRootPath, @"..\albums.json"),
+            DataPhotosFullPath = Path.Combine(env.ContentRootPath, @"..\photos.json")
+         });
       }
    }
 }

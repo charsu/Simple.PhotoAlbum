@@ -3,36 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Simple.PhotoAlbum.Core;
+using Simple.PhotoAlbum.Core.Models;
 
 namespace Simple.PhotoAlbum.Web.Controllers {
    [Route("api/[controller]")]
    [ApiController]
    public class PhotosController : ControllerBase {
-      // GET api/values
+      private readonly IDataRepository _dataRepository;
+      private readonly IUserRepository _userRepository;
+
+      public PhotosController(IDataRepository dataRepository, IUserRepository userRepository) {
+         _dataRepository = dataRepository;
+         _userRepository = userRepository;
+      }
+
+      // GET api/album
       [HttpGet]
-      public ActionResult<IEnumerable<string>> Get() {
-         return new string[] { "value1", "value2" };
-      }
+      public ActionResult<IEnumerable<PhotoModel>> Get()
+         => _dataRepository.GetSet<PhotoModel>().ToList();
 
-      // GET api/values/5
+      // GET api/album/id
       [HttpGet("{id}")]
-      public ActionResult<string> Get(int id) {
-         return "value";
-      }
+      public ActionResult<PhotoModel> GetById(int id)
+         => _dataRepository.GetSet<PhotoModel>().FirstOrDefault(x => x.Id == id);
 
-      // POST api/values
-      [HttpPost]
-      public void Post([FromBody] string value) {
-      }
+      // GET api/photo/foruser/id
+      [HttpGet("forUser/{id}")]
+      public ActionResult<IEnumerable<PhotoModel>> GetForUserId(int id)
+         => _userRepository.GetPhotosForUser(id)?.ToList();
 
-      // PUT api/values/5
-      [HttpPut("{id}")]
-      public void Put(int id, [FromBody] string value) {
-      }
-
-      // DELETE api/values/5
-      [HttpDelete("{id}")]
-      public void Delete(int id) {
-      }
    }
 }

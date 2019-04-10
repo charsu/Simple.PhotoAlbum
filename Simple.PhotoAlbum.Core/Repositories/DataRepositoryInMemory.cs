@@ -19,5 +19,10 @@ namespace Simple.PhotoAlbum.Core {
 
       private ConcurrentDictionary<int, IModel> GetStorage<T>()
          => _storage.GetOrAdd(typeof(T), new ConcurrentDictionary<int, IModel>());
+
+      #region IDisposable
+      public void Dispose() {
+      }
+      #endregion
    }
 }
